@@ -61,6 +61,26 @@ the README, the store text, posts.
   same thing within a short window count once; a touch that wanders counts where it landed; a long press acts
   as a tap or does nothing; a palm resting on the edge is ignored. Put it in one module and use it everywhere.
 
+## Durable and reliable above everything (Gene, 2026-11-19)
+
+Gene: "The HTML design approach makes most sense. Keep this as durable and reliable as possible." A family sets
+this up once and hands it over; nobody will be there to fix it. So:
+
+- **Nothing outside the app.** No frameworks, libraries, CDNs, web fonts from elsewhere or online services.
+  Every file it needs is in the repo and in the offline cache.
+- **Old devices work.** Grandparents' iPads are often years old and stuck on an older iOS. Use well-supported
+  HTML, CSS and JavaScript; for anything newer, check browser support first and give it a fallback. Test on the
+  oldest Safari and Chrome we can reach.
+- **It never shows a blank or broken screen.** Catch every error, and if something goes wrong, fall back to the
+  porch rather than stopping. If saved progress can't be read, start fresh quietly. A missing sound or
+  picture must never stop an activity.
+- **Offline updates can't break it.** The service worker installs a new version completely before using it,
+  keeps the old one until then, and never mixes files from two versions.
+- **Small and plain.** Less code is less to break. Each activity is self-contained, so a problem in one
+  can't take down the porch or the others.
+- **Tested before every release:** every screen wide and tall, tablet- and phone-sized; the touch filter;
+  offline start; an update from the previous version; error fallback back to the porch.
+
 ## The Fun Shed house kit
 
 The kit (`~/Workspace/thefunshed/wiki/kit.md`) is for the arcade games: scores, results, pause, high scores.
