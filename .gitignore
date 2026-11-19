@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+dist/
+
+# art work files and voice tries stay on this computer
+art/source/
+sayings/voice-samples/
+HANDOFF.md
